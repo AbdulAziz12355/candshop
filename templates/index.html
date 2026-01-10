@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>One Star Shop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1 style="text-align:center;">🛒 One Star Shop</h1>
+
+<div class="products">
+    {% for p in products %}
+    <div class="product">
+        <img src="{{ url_for('static', filename='images/' ~ p.image) }}">
+        <h3>{{ p.name }}</h3>
+        <p>{{ p.price }} Ks</p>
+        <a class="button" href="/buy/{{ p.id }}">ဝယ်မယ်</a>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
