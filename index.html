@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Candy - Beauty & Personal Care</title>
+    <title>Candy Beauty Shop - Premium Cosmetics</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,32 +14,32 @@
         }
         
         :root {
-            --primary-pink: #ff66b2;
+            --pink: #ff66b2;
             --light-pink: #ffe6f2;
             --dark-pink: #e60073;
         }
         
         body {
             background-color: #fff5f9;
-            color: #333;
         }
         
         /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary-pink), var(--dark-pink));
+        .header {
+            background: linear-gradient(90deg, var(--pink), var(--dark-pink));
             color: white;
-            padding: 1rem 2rem;
+            padding: 25px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            box-shadow: 0 4px 12px rgba(255, 102, 178, 0.3);
+            gap: 15px;
+            box-shadow: 0 5px 20px rgba(255, 102, 178, 0.3);
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
+            gap: 15px;
+            font-size: 32px;
             font-weight: bold;
         }
         
@@ -50,598 +50,422 @@
         .contact-info {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
-        .viber-contact {
+        .viber-btn {
             background: white;
-            color: var(--primary-pink);
-            padding: 8px 15px;
-            border-radius: 25px;
+            color: #7360F2;
+            padding: 12px 25px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             transition: 0.3s;
         }
         
-        .viber-contact:hover {
-            background: var(--light-pink);
+        .viber-btn:hover {
             transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        /* Navigation */
-        nav {
-            background-color: white;
-            padding: 1rem 2rem;
-            border-bottom: 3px solid var(--light-pink);
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .nav-btn {
-            background: none;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            color: #666;
-            transition: 0.3s;
-        }
-        
-        .nav-btn:hover, .nav-btn.active {
-            background-color: var(--primary-pink);
-            color: white;
-        }
-        
-        /* Hero Section */
+        /* Hero */
         .hero {
-            background: linear-gradient(rgba(255, 102, 178, 0.1), rgba(230, 0, 115, 0.1)), 
-                        url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                        url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
+            margin: 30px;
+            border-radius: 25px;
         }
         
         .hero h1 {
-            font-size: 3rem;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-            margin-bottom: 1rem;
+            color: var(--dark-pink);
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
-        /* Products Section */
-        .products-container {
-            padding: 2rem;
+        /* Products */
+        .products {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 30px 20px;
         }
         
         .section-title {
             text-align: center;
             color: var(--dark-pink);
-            margin-bottom: 2rem;
-            font-size: 2.2rem;
+            font-size: 36px;
+            margin: 40px 0 50px;
             position: relative;
         }
         
-        .section-title:after {
+        .section-title::after {
             content: '';
-            position: absolute;
+            display: block;
             width: 100px;
-            height: 4px;
-            background: var(--primary-pink);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
+            height: 5px;
+            background: var(--pink);
+            margin: 20px auto;
+            border-radius: 3px;
         }
         
-        .products-grid {
+        .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 35px;
+            margin-bottom: 60px;
         }
         
         .product-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(255, 102, 178, 0.1);
-            transition: 0.3s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
         }
         
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(255, 102, 178, 0.2);
+            box-shadow: 0 20px 40px rgba(255, 102, 178, 0.2);
         }
         
         .product-img {
-            height: 200px;
-            width: 100%;
-            background-color: #f9f9f9;
+            height: 220px;
+            background: var(--light-pink);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: var(--primary-pink);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .product-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .upload-placeholder {
-            text-align: center;
-            padding: 20px;
-            cursor: pointer;
-        }
-        
-        .upload-placeholder i {
-            font-size: 4rem;
-            margin-bottom: 10px;
-            color: var(--primary-pink);
+            font-size: 60px;
+            color: var(--pink);
         }
         
         .product-info {
-            padding: 1.5rem;
+            padding: 25px;
         }
         
         .product-category {
-            color: var(--primary-pink);
-            font-size: 0.9rem;
+            color: var(--pink);
             font-weight: bold;
+            font-size: 14px;
             text-transform: uppercase;
-            margin-bottom: 5px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
         }
         
         .product-name {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 22px;
             color: #333;
+            margin-bottom: 15px;
+            line-height: 1.4;
         }
         
         .product-price {
             color: var(--dark-pink);
-            font-size: 1.5rem;
+            font-size: 26px;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         
         .order-btn {
-            background: linear-gradient(to right, var(--primary-pink), var(--dark-pink));
+            background: linear-gradient(90deg, var(--pink), var(--dark-pink));
             color: white;
             border: none;
-            padding: 12px 25px;
+            padding: 15px;
             border-radius: 25px;
-            cursor: pointer;
+            font-size: 16px;
             font-weight: bold;
+            cursor: pointer;
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             transition: 0.3s;
         }
         
         .order-btn:hover {
-            background: linear-gradient(to right, var(--dark-pink), #b30047);
+            background: linear-gradient(90deg, var(--dark-pink), #cc0066);
         }
         
         /* Admin Login */
-        .admin-login {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
+        .admin-section {
             max-width: 400px;
-            margin: 3rem auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 60px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
         
-        .login-title {
+        .admin-title {
             text-align: center;
             color: var(--dark-pink);
-            margin-bottom: 1.5rem;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
         
         .login-form input {
-            width: 100%;
-            padding: 12px 15px;
-            margin-bottom: 15px;
+            padding: 16px 20px;
             border: 2px solid #eee;
-            border-radius: 8px;
-            font-size: 1rem;
+            border-radius: 12px;
+            font-size: 16px;
             transition: 0.3s;
         }
         
         .login-form input:focus {
-            border-color: var(--primary-pink);
             outline: none;
+            border-color: var(--pink);
         }
         
-        .login-btn {
-            background: linear-gradient(to right, var(--primary-pink), var(--dark-pink));
+        .login-submit {
+            background: linear-gradient(90deg, var(--pink), var(--dark-pink));
             color: white;
             border: none;
-            padding: 12px;
-            border-radius: 8px;
-            cursor: pointer;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 17px;
             font-weight: bold;
-            width: 100%;
-            font-size: 1rem;
+            cursor: pointer;
             transition: 0.3s;
         }
         
-        .login-btn:hover {
-            background: linear-gradient(to right, var(--dark-pink), #b30047);
+        .login-submit:hover {
+            background: linear-gradient(90deg, var(--dark-pink), #cc0066);
         }
         
         /* Footer */
         footer {
-            background: linear-gradient(135deg, var(--dark-pink), #b30047);
+            background: linear-gradient(90deg, var(--dark-pink), #cc0066);
             color: white;
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding: 40px 20px;
+            margin-top: 80px;
         }
         
-        /* Upload Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 1000;
+        .footer-contact {
+            font-size: 20px;
+            margin-top: 20px;
+            display: flex;
             align-items: center;
             justify-content: center;
+            gap: 15px;
         }
         
-        .modal-content {
-            background: white;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 500px;
-            padding: 2rem;
-            position: relative;
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #666;
-        }
-        
-        /* Responsive */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 36px;
             }
             
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            .section-title {
+                font-size: 30px;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 28px;
             }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header class="header">
         <div class="logo">
             <i class="fas fa-candy-cane"></i>
             <span>Candy Beauty Shop</span>
         </div>
+        
         <div class="contact-info">
-            <div class="phone">
-                <i class="fas fa-phone"></i> Viber: 09768667971
+            <div style="font-size: 18px; display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-phone"></i>
+                <span>09768667971</span>
             </div>
-            <a href="viber://contact?number=%2B9768667971" class="viber-contact">
-                <i class="fab fa-viber"></i> Order on Viber
+            <a href="viber://contact?number=%2B9768667971" class="viber-btn">
+                <i class="fab fa-viber"></i>
+                <span>Order on Viber</span>
             </a>
         </div>
     </header>
     
-    <!-- Navigation -->
-    <nav>
-        <button class="nav-btn active" data-category="all">All Products</button>
-        <button class="nav-btn" data-category="cosmetics">Cosmetics</button>
-        <button class="nav-btn" data-category="skincare">Skincare</button>
-        <button class="nav-btn" data-category="personal">Personal Care</button>
-        <button class="nav-btn" data-category="fragrance">Fragrance</button>
-    </nav>
-    
     <!-- Hero Section -->
     <section class="hero">
-        <div>
-            <h1>Beautiful You Starts Here</h1>
-            <p style="font-size: 1.2rem;">Premium beauty products with pink perfection</p>
+        <h1>Premium Beauty Products</h1>
+        <p style="font-size: 20px; color: #666; max-width: 700px; margin: 0 auto 30px;">
+            Discover our exclusive collection of cosmetics and personal care items. 
+            Perfect for your beauty routine with premium quality.
+        </p>
+        <div style="background: var(--pink); color: white; padding: 15px 40px; border-radius: 30px; 
+                    display: inline-block; font-weight: bold; font-size: 18px;">
+            <i class="fas fa-star"></i> Special Pink Collection
         </div>
     </section>
     
     <!-- Products Section -->
-    <section class="products-container">
+    <section class="products">
         <h2 class="section-title">Our Products</h2>
         
-        <div class="products-grid" id="productsGrid">
-            <!-- Products will be loaded here -->
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Cosmetics</div>
+                    <div class="product-name">Pink Blush Palette Set</div>
+                    <div class="product-price">12,500 Ks</div>
+                    <button class="order-btn" onclick="orderProduct('Pink Blush Palette', 12500)">
+                        <i class="fab fa-viber"></i>
+                        <span>Order on Viber</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Skincare</div>
+                    <div class="product-name">Moisturizing Cream 50ml</div>
+                    <div class="product-price">9,800 Ks</div>
+                    <button class="order-btn" onclick="orderProduct('Moisturizing Cream', 9800)">
+                        <i class="fab fa-viber"></i>
+                        <span>Order on Viber</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <i class="fas fa-wind"></i>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Fragrance</div>
+                    <div class="product-name">Floral Perfume 100ml</div>
+                    <div class="product-price">18,900 Ks</div>
+                    <button class="order-btn" onclick="orderProduct('Floral Perfume', 18900)">
+                        <i class="fab fa-viber"></i>
+                        <span>Order on Viber</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <i class="fas fa-lipstick"></i>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Cosmetics</div>
+                    <div class="product-name">Premium Lipstick Set</div>
+                    <div class="product-price">11,200 Ks</div>
+                    <button class="order-btn" onclick="orderProduct('Lipstick Set', 11200)">
+                        <i class="fab fa-viber"></i>
+                        <span>Order on Viber</span>
+                    </button>
+                </div>
+            </div>
         </div>
-    </section>
-    
-    <!-- Admin Login -->
-    <section class="admin-login" id="adminSection">
-        <h3 class="login-title">Admin Login</h3>
-        <form class="login-form" id="adminLoginForm">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit" class="login-btn">Login</button>
-        </form>
+        
+        <!-- Admin Login -->
+        <div class="admin-section" id="adminSection">
+            <h3 class="admin-title">Admin Login</h3>
+            <form class="login-form" id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" class="login-submit">Login</button>
+            </form>
+        </div>
     </section>
     
     <!-- Footer -->
     <footer>
-        <p>© 2024 Candy Beauty Shop. All rights reserved.</p>
-        <p style="margin-top: 10px; opacity: 0.9;">Viber Orders: 09768667971</p>
+        <div style="font-size: 24px; font-weight: bold; margin-bottom: 20px;">
+            <i class="fas fa-candy-cane"></i> Candy Beauty Shop
+        </div>
+        <p>Premium cosmetics and personal care products</p>
+        <div class="footer-contact">
+            <i class="fab fa-viber"></i>
+            <span>Viber: 09768667971</span>
+        </div>
+        <p style="margin-top: 30px; opacity: 0.9;">© 2024 All rights reserved</p>
     </footer>
     
-    <!-- Upload Modal -->
-    <div class="modal" id="uploadModal">
-        <div class="modal-content">
-            <span class="close-modal" id="closeModal">&times;</span>
-            <h3 style="color: var(--dark-pink); margin-bottom: 1rem;">Add New Product</h3>
-            <form id="productForm">
-                <input type="text" id="prodName" placeholder="Product Name" required>
-                <input type="text" id="prodCategory" placeholder="Category" required>
-                <input type="number" id="prodPrice" placeholder="Price" required>
-                
-                <div class="upload-placeholder" id="imageUploadArea" style="margin: 15px 0; border: 2px dashed var(--primary-pink); border-radius: 10px;">
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <p>Click to upload product image</p>
-                    <p style="font-size: 0.8rem; color: #666;">or take photo with camera</p>
-                    <input type="file" id="imageInput" accept="image/*" capture="environment" style="display: none;">
-                </div>
-                
-                <button type="submit" class="order-btn">Add Product</button>
-            </form>
-        </div>
-    </div>
-    
     <script>
-        // Sample products data
-        const products = [
-            {
-                id: 1,
-                name: "Pink Blush Palette",
-                category: "cosmetics",
-                price: 12500,
-                image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-            },
-            {
-                id: 2,
-                name: "Moisturizing Cream",
-                category: "skincare",
-                price: 9800,
-                image: "https://images.unsplash.com/photo-1556228578-9c360e1d8d34?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-            },
-            {
-                id: 3,
-                name: "Floral Perfume",
-                category: "fragrance",
-                price: 18900,
-                image: "https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-            },
-            {
-                id: 4,
-                name: "Lipstick Set",
-                category: "cosmetics",
-                price: 11200,
-                image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-            }
-        ];
-        
-        // DOM Elements
-        const productsGrid = document.getElementById('productsGrid');
-        const navButtons = document.querySelectorAll('.nav-btn');
-        const adminLoginForm = document.getElementById('adminLoginForm');
-        const uploadModal = document.getElementById('uploadModal');
-        const closeModal = document.getElementById('closeModal');
-        const imageUploadArea = document.getElementById('imageUploadArea');
-        const imageInput = document.getElementById('imageInput');
-        const productForm = document.getElementById('productForm');
-        const adminSection = document.getElementById('adminSection');
-        
-        // Initialize products
-        function renderProducts(category = 'all') {
-            productsGrid.innerHTML = '';
-            
-            const filteredProducts = category === 'all' 
-                ? products 
-                : products.filter(product => product.category === category);
-            
-            filteredProducts.forEach(product => {
-                const productCard = document.createElement('div');
-                productCard.className = 'product-card';
-                
-                productCard.innerHTML = `
-                    <div class="product-img">
-                        <img src="${product.image}" alt="${product.name}">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">${product.category.toUpperCase()}</div>
-                        <div class="product-name">${product.name}</div>
-                        <div class="product-price">${product.price.toLocaleString()} Ks</div>
-                        <button class="order-btn" onclick="orderProduct(${product.id})">
-                            <i class="fab fa-viber"></i> Order on Viber
-                        </button>
-                    </div>
-                `;
-                
-                productsGrid.appendChild(productCard);
-            });
-            
-            // Add empty product card for adding new products
-            if (category === 'all') {
-                const addCard = document.createElement('div');
-                addCard.className = 'product-card';
-                addCard.innerHTML = `
-                    <div class="product-img upload-placeholder" id="addProductBtn">
-                        <i class="fas fa-plus-circle"></i>
-                        <p>Add New Product</p>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-name">Add your product</div>
-                        <div class="product-price">Admin only</div>
-                        <button class="order-btn" style="background: #666;">
-                            <i class="fas fa-lock"></i> Admin Access
-                        </button>
-                    </div>
-                `;
-                productsGrid.appendChild(addCard);
-                
-                document.getElementById('addProductBtn').addEventListener('click', () => {
-                    const isAdmin = localStorage.getItem('candy_admin') === 'true';
-                    if (isAdmin) {
-                        uploadModal.style.display = 'flex';
-                    } else {
-                        alert('Please login as admin first');
-                    }
-                });
-            }
-        }
-        
-        // Order product function
-        window.orderProduct = function(productId) {
-            const product = products.find(p => p.id === productId);
-            const message = `Order from Candy Shop:\nProduct: ${product.name}\nPrice: ${product.price} Ks\n\nMy details: [Your name and address]`;
-            const encodedMessage = encodeURIComponent(message);
-            const viberUrl = `viber://forward?text=${encodedMessage}`;
+        // Order function
+        function orderProduct(name, price) {
+            const message = `Order from Candy Beauty Shop:\n\nProduct: ${name}\nPrice: ${price.toLocaleString()} Ks\n\nCustomer Details:\nName: \nAddress: \nPhone: `;
+            const viberUrl = `viber://forward?text=${encodeURIComponent(message)}`;
             
             // Try to open Viber
             window.open(viberUrl, '_blank');
             
-            // Fallback if Viber not installed
+            // Fallback
             setTimeout(() => {
-                if (!document.hidden) {
-                    alert(`To order ${product.name}, please message us on Viber: 09768667971\n\nProduct: ${product.name}\nPrice: ${product.price} Ks`);
-                }
+                alert(`To order "${name}", please message us on Viber:\n\n09768667971\n\nProduct: ${name}\nPrice: ${price.toLocaleString()} Ks`);
             }, 500);
-        };
-        
-        // Category filter
-        navButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                navButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                renderProducts(button.dataset.category);
-            });
-        });
+        }
         
         // Admin login
-        adminLoginForm.addEventListener('submit', (e) => {
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             
             if (username === 'user' && password === 'OSM786') {
-                localStorage.setItem('candy_admin', 'true');
-                alert('Admin login successful! You can now add products.');
-                adminSection.style.display = 'none';
+                alert('Admin login successful!');
+                // Here you can add admin functionality
+                document.getElementById('adminSection').innerHTML = `
+                    <h3 class="admin-title">Admin Panel</h3>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button onclick="addProduct()" style="background: var(--pink); color: white; border: none; padding: 12px 24px; border-radius: 8px; margin: 10px; cursor: pointer;">
+                            Add Product
+                        </button>
+                        <button onclick="viewOrders()" style="background: var(--dark-pink); color: white; border: none; padding: 12px 24px; border-radius: 8px; margin: 10px; cursor: pointer;">
+                            View Orders
+                        </button>
+                        <button onclick="logout()" style="background: #666; color: white; border: none; padding: 12px 24px; border-radius: 8px; margin: 10px; cursor: pointer;">
+                            Logout
+                        </button>
+                    </div>
+                `;
             } else {
-                alert('Invalid login credentials');
+                alert('Invalid username or password!');
             }
         });
         
-        // Check if already logged in
-        if (localStorage.getItem('candy_admin') === 'true') {
-            adminSection.style.display = 'none';
+        function addProduct() {
+            alert('Add product functionality would be implemented here.');
         }
         
-        // Modal controls
-        closeModal.addEventListener('click', () => {
-            uploadModal.style.display = 'none';
-        });
+        function viewOrders() {
+            alert('View orders functionality would be implemented here.');
+        }
         
-        imageUploadArea.addEventListener('click', () => {
-            imageInput.click();
-        });
-        
-        imageInput.addEventListener('change', (e) => {
-            if (e.target.files && e.target.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    imageUploadArea.innerHTML = `
-                        <img src="${event.target.result}" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
-                        <p style="margin-top: 10px;">Image selected</p>
-                    `;
-                };
-                reader.readAsDataURL(e.target.files[0]);
-            }
-        });
-        
-        // Add new product
-        productForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const name = document.getElementById('prodName').value;
-            const category = document.getElementById('prodCategory').value;
-            const price = parseInt(document.getElementById('prodPrice').value);
-            
-            let imageUrl = '';
-            if (imageInput.files && imageInput.files[0]) {
-                // In a real app, you would upload to server
-                // For demo, we use a placeholder
-                imageUrl = 'https://images.unsplash.com/photo-1560743173-567a3b5658b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80';
-            } else {
-                imageUrl = 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80';
-            }
-            
-            const newProduct = {
-                id: products.length + 1,
-                name,
-                category: category.toLowerCase(),
-                price,
-                image: imageUrl
-            };
-            
-            products.push(newProduct);
-            renderProducts('all');
-            uploadModal.style.display = 'none';
-            productForm.reset();
-            imageUploadArea.innerHTML = `
-                <i class="fas fa-cloud-upload-alt"></i>
-                <p>Click to upload product image</p>
-                <p style="font-size: 0.8rem; color: #666;">or take photo with camera</p>
-            `;
-            
-            alert('Product added successfully!');
-        });
-        
-        // Initial render
-        renderProducts('all');
+        function logout() {
+            location.reload();
+        }
     </script>
 </body>
 </html>
