@@ -1,17 +1,16 @@
 # Candy Beauty Shop
 
-Beautiful cosmetics and personal care products online store.
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Candy Beauty Shop</title>
+</head>
+<body style="background:pink; text-align:center;">
 
-## Features
-- Product catalog with categories
-- Viber ordering system
-- Admin panel for adding products
-- Responsive pink theme design
-- Image upload functionality
+<h1>Candy Beauty Shop</h1>
+<h3>Viber Order Only</h3>
+<p>📞 +959768667971</p>
 
-## Contact
-Viber: 09768667971
-
-## Admin Login
-Username: user
-Password: OSM786
+</body>
+</html>
